@@ -7,7 +7,7 @@ from transformers import pipeline
 r = sr.Recognizer()
 engine = pyttsx3.init()
 
-# Load a pre-trained LLM (e.g., GPT-2)
+# Load a pre-trained LLM (GPT-2)
 generator = pipeline('text-generation', model='gpt2')
 
 # Streamlit app
@@ -28,13 +28,12 @@ def main():
                 response = generator(text, max_length=50, num_return_sequences=1)[0]['generated_text']
                 st.write(f"Response: {response}")
 
-                # Text-to-speech output (play in Streamlit)
+                # Text-to-speech output (Streamlit)
                 # **Use pyttsx3 to generate audio**
                 engine.say(response)
                 engine.runAndWait()
 
-                # **Play the audio in Streamlit (requires audio data)**
-                # ... (Add code to convert response to audio data)
+                # **Play the audio in Streamlit **
 
             except sr.UnknownValueError:
                 st.error("Could not understand audio")
