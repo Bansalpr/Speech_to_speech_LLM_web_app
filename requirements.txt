@@ -1,6 +1,5 @@
-SpeechRecognition>=3.8.1
+SpeechRecognition==3.10.4
 pyttsx3==2.97
 transformers==4.44.2
-streamlit==1.26.0
-Pillow==9.4.0
-
+streamlit==1.38.0
+Pillow==10.4.0
